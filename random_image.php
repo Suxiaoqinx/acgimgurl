@@ -62,24 +62,16 @@ switch ($type)
 //JSON
 case 'json':
 header('Content-type:text/json');
-$json_string = json_encode($result, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT); 
-file_put_contents('json/json/test.json', $json_string); 
 echo json_encode($result, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
-$json_string = json_encode($arrayName, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT); 
-file_put_contents('json/json/url.json', $json_string); 
 break;
  
 //302 Redirect
 case '302':
 header("Location:".$result['imgurl']);
-$json_string = json_encode($result, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT); 
-file_put_contents('json/json/siteurl.json', $json_string);
 break;
     
 //IMG
 default:
 header("Location:".$result['imgurl']);
-$json_string = json_encode($result, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT); 
-file_put_contents('json/json/site.json', $json_string); 
 break;
 }
