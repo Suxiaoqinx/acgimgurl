@@ -32,7 +32,6 @@ break;
 //格式解析                             
 case 'img':
 $img = file_get_contents($url,true);
-//使用图片头输出浏览器
 header("Content-Type: image/jpeg;");
 echo $img;
 break;
