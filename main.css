@@ -1,0 +1,57 @@
+body{
+	font-family: 微软雅黑;
+	background: url(acgurl.php);background-repeat:no-repeat;background-attachment:fixed;background-position: center center;background-size: cover;;
+}
+.bottom{
+	position: fixed;
+	height: 30px;
+	width: 100%;
+	bottom: 0px;
+	text-align: center;
+	font-size: 20px;
+	color: #2196F3;
+	text-shadow: #000 1px 1px 1px;
+	margin-bottom: 10px;
+}
+pre{
+	color: #2196F3;
+	font-size: 18px;
+	font-family: 微软雅黑;
+	background: rgba(255, 255, 255, 0.55);
+	line-height: 30px;
+}
+.json_note{
+	color: #004CFF;
+	font-weight:bold;
+}
+.json_key{ 
+	color: #92278f;
+	font-weight:bold;
+}
+.json_null{
+	color: #f1592a;
+	font-weight:bold;
+}
+.json_string{ 
+	color: #3ab54a;
+	font-weight:bold;
+}
+.json_number{ 
+	color: #25aae2;
+	font-weight:bold;
+}
+.title{
+	text-shadow: rgb(0, 0, 0) 1px 1px 1px;font-size: 39px;color: #00CEFF;position: absolute;top: 3px;left: 61px;
+}
+.title2{
+	font-size:24px;color: #F100FF;position: absolute;top: 18px;left: 220px;
+} 
+.container{
+	position: relative;top: 90px;margin: 0 auto;
+}
+.well{
+	background: rgba(255, 255, 255, 0.58);text-shadow: #000 1px 1px 1px;color: #00F1FF;font-size: 20px;
+}
+.well a{
+	color: #00F1FF;font-size: 20px;
+}
