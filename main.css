@@ -1,6 +1,6 @@
 body{
 	font-family: 微软雅黑;
-	background: url(acgurl.php);background-repeat:no-repeat;background-attachment:fixed;background-position: center center;background-size: cover;;
+	background: url(acgurl.php?return=ssl);background-repeat:no-repeat;background-attachment:fixed;background-position: center center;background-size: cover;;
 }
 .bottom{
 	position: fixed;
