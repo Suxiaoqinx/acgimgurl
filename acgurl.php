@@ -10,10 +10,10 @@ $server = rand(1,4);
 if(!in_array($size, $size_arr)){
 	$size = 'large';
 }
-$url = 'https://tva'.$server.'.sinaimg.cn/'.$size.'/'.$sina_img.'.jpg';
-//解析结果
+$url = 'http://tva'.$server.'.sinaimg.cn/'.$size.'/'.$sina_img.'.jpg';
+//解析JSON
 $result=array("code"=>"200","acgurl"=>"$url");
-//Type Choose参数代码
+
 $type=$_GET['return'];
 switch ($type)
 {   
@@ -25,11 +25,11 @@ $pathinfo = pathinfo($path);
 $imageInfo = getimagesize($url);  
 $result['width']="$imageInfo[0]";  
 $result['height']="$imageInfo[1]";
-$result['size']="$pathinfo[extension]";    
+$result['size']="$pathinfo[extension]"; 
 header('Content-type:text/json');
 echo json_encode($result);
 break;
-//格式解析                             
+//不输出图片链接直接显示                             
 case 'img':
 $img = file_get_contents($url,true);
 header("Content-Type: image/jpeg;");
@@ -37,6 +37,15 @@ echo $img;
 break;
 //IMG
 default:
+header("Location:".$result['acgurl']);
+break;
+//HTTPS图片输出                             
+case 'https':
+$url=str_replace("http","https", $result['acgurl']);
+header("Location:".$url);
+break;
+//HTTP图片输出                             
+case 'http':
 header("Location:".$result['acgurl']);
 break;
 }
