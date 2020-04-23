@@ -17,7 +17,6 @@ $result=array("code"=>"200","acgurl"=>"$url");
 $type=$_GET['return'];
 switch ($type)
 {   
-   
 //格式解析                             
 case 'json':
 $path = "$url";
@@ -27,7 +26,8 @@ $result['width']="$imageInfo[0]";
 $result['height']="$imageInfo[1]";
 $result['size']="$pathinfo[extension]"; 
 header('Content-type:text/json');
-echo json_encode($result);
+$url=str_replace("http:","https:", $result);
+echo json_encode($url);
 break;
 //不输出图片链接直接显示                             
 case 'img':
@@ -39,14 +39,14 @@ break;
 default:
 header("Location:".$result['acgurl']);
 break;
+}
+$type1=$_GET['ssl'];
+switch ($type1)
+{   
 //HTTPS图片输出                             
-case 'https':
-$url=str_replace("http","https", $result['acgurl']);
+case 'true':
+$url=str_replace("http:","https:", $result['acgurl']);
 header("Location:".$url);
-break;
-//HTTP图片输出                             
-case 'http':
-header("Location:".$result['acgurl']);
 break;
 }
 function str_re($str){
