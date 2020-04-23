@@ -1,5 +1,5 @@
 调用地址:http://xxx.com/acgurl.php
-调用参数:return = json / http / https / img
+调用参数:return = json / img
 json：返回标准json数据(图片地址)
 img：直接php显示图片不返回图片链接
 ssl=true(开启https跳转)ssl=false(关闭https跳转/)
