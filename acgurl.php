@@ -18,7 +18,7 @@ $server = rand(1,4);
 if(!in_array($size, $size_arr)){
 	$size = 'large';
 }
-$url = 'https://tva'.$server.'.sinaimg.cn/'.$size.'/'.$result.'.jpg';
+$url = 'http://tva'.$server.'.sinaimg.cn/'.$size.'/'.$result.'.jpg';
 //解析JSON
 $result=array("code"=>"200","acgurl"=>"$url");
 $type=$_GET['return'];
